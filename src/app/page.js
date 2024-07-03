@@ -13,7 +13,8 @@ import { useEffect, useState } from "react";
 
 const getArticle = async () => {
 
-  const res = await fetch("https://dev.to/api/articles?pages=");
+  const res = await fetch("https://dev.to/api/articles"
+  );
 
   const articles = await res.json();
 
@@ -36,6 +37,12 @@ export default function Home() {
     getData();
   }, []);
 
+  // const setData = ({ articles }) => {
+  //   arr.sort((a, b) => {
+  //     if (b.articles[i] < a.articles[i + 1])
+  //       if (a.articles[i + 1] > b.articles[i]);
+  //   })
+
   return (
     <main className="bg-white ">
       <div className="px-4 max-w-screen-xl m-auto ">
@@ -57,3 +64,4 @@ export default function Home() {
     </main>
   );
 }
+
