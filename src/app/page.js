@@ -48,12 +48,9 @@ export default function Home() {
       <div className="px-4 max-w-screen-xl m-auto ">
         <Navbar />
         <MainCarousel articles={articles} />
-        <Trending />
+        <Trending articles={articles} />
         <Allblog articles={articles} />
         <Loadmore />
-
-
-
 
       </div>
       <FooterUp />
