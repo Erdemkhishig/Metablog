@@ -5,7 +5,7 @@ export const Carousel1 = ({ articles, index }) => {
 
 
     const caroFirst = articles[articles.length - 4]
-    console.log(caroFirst)
+
     return (
 
 
