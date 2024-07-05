@@ -1,13 +1,13 @@
 "use client"
 
 import Image from "next/image";
-import { Navbar } from "@/app/components/Navbar";
-import { MainCarousel } from "./components/MainCarousel";
-import { Trending } from "./components/TrendingCards";
-import { Allblog } from "./components/AllBlogCards";
-import { Loadmore } from "./components/LoadMore";
-import { FooterUp } from "./components/Footer-Up";
-import { FooterDown } from "./components/Footer-Down";
+import { Navbar } from "@/components/Navbar";
+import { MainCarousel } from "../components/MainCarousel";
+import { Trending } from "../components/TrendingCards";
+import { Allblog } from "../components/AllBlogCards";
+import { Loadmore } from "../components/BlogTag";
+import { FooterUp } from "../components/Footer-Up";
+import { FooterDown } from "../components/Footer-Down";
 
 import { useEffect, useState } from "react";
 
@@ -49,8 +49,7 @@ export default function Home() {
         <Navbar />
         <MainCarousel articles={articles} />
         <Trending articles={articles} />
-        <Allblog articles={articles} />
-        <Loadmore />
+        <Allblog />
 
       </div>
       <FooterUp />
