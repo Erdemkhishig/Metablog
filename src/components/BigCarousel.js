@@ -7,60 +7,121 @@ import { Carousel3 } from "./Carousel3";
 import { Carousel4 } from "./Carousel4";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import React from "react";
+
 
 
 
 const slides = [
-    "https://lh3.googleusercontent.com/d/14hCZV1nBdU-Q-ECGnIwCV0ERzm8tUG3i",
-    "https://lh3.googleusercontent.com/d/10u8iWzRpMyLyvDK3-DvqrO5kUXlU9QUg",
-    "https://lh3.googleusercontent.com/d/1c2cj1Gjz1_W41zIuTGFolVuF3ofyvhfH",
-    "https://lh3.googleusercontent.com/d/1ZxZFVLC5OIeMgNH2sJkFnwozycuOHaPu",
-    // <Carousel2 />,
-    // <Carousel3 />,
-    // <Carousel4 />,
-    // <Carousel1 />,
+    {
+        url: 'https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F52q4hyv61kfmnps2yme4.png'
+    },
+    {
+        url: 'https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Frw9zqnunwy90k4lkvbyu.png'
+    },
+    {
+        url: 'https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffg3fij7wo1k19r3xepfw.png'
+    },
+    {
+        url: 'https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F2lzjhhdzwzaucsexxm0o.jpg'
+    },
 ];
 
 
+export const BigCarousel = ({ articles, index }) => {
+
+    const slider = [
+        <Carousel4 articles={articles} />,
+        <Carousel1 articles={articles} />,
+        <Carousel2 articles={articles} />,
+        <Carousel3 articles={articles} />,
+        <Carousel4 articles={articles} />,
+        <Carousel1 articles={articles} />,
+    
+    ]
 
 
-export const BigCarousel = ({ articles }) => {
+    
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
-
-    };
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
-
-    };
-
-    return (
-        <div >
-            <Carousel2 articles={articles} />,
-            <Carousel3 articles={articles} />,
-            <Carousel4 articles={articles} />,
-            <Carousel1 articles={articles} />,
-            {/* <div><img src={slides[currentIndex]} alt="" /></div> */}
+    
+    
 
 
 
-            <div>
-                <div className="ml-[66rem] mt-[37.5rem] flex py-2 justify-center gap-4 font-thin lg:flex lg:justify-end">
-                    <button className="flex items-center justify-center w-[44px] h-[44px] border-2 rounded-lg  border-black"> <IoIosArrowBack onClick={prevSlide} size={28} /></button>
-                    <button className="flex items-center justify-center w-[44px] h-[44px] border-2 rounded-lg border-black"> <IoIosArrowForward onClick={nextSlide} size={28} /> </button>
-                </div>
+    // const [currentIndex, setCurrentIndex] = useState(0);
 
-            </div >
+    // const prevSlide = () => {
+    //     setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
 
+    // };
+
+    // const nextSlide = () => {
+    //     setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+
+    // };
+    // const [currentIndex, setCurrentIndex] = useState(1);
+    // const prevSlide = () => {
+    //     const isFirstSlide = currentIndex === 0;
+    //     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    //     setCurrentIndex(newIndex)
+    // };
+
+    // const nextSlide = () => {
+    //     const isLastSlide = currentIndex === slides.length - 1;
+    //     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    //     setCurrentIndex(newIndex)
+    // };
+
+    if (articles.length === 0) {
+        return (
+            <div>Loading...</div>
+        )
+    }
+
+   
+
+const [prev, next] = useState(0)
+const handleSlider = () => {
+    next(!prev)
+};
+
+//     const [currentIndex, setCurrentIndex] = useState(0);
+
+// const nextImage = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex + 1) % slider.length);
+// };
+
+// const prevImage = () => {
+//     setCurrentIndex((prevIndex) => (prevIndex - 1 + slider.length) % slider.length);
+// };
+
+return (
+    <div>
+        <div className="relative w-full h-[15rem] lg:h-[38rem] overflow-hidden" >
+        <div className={prev ? ' w-[600%] h-full rounded-2xl flex duration-1000 translate-x-[0]' : 'w-[600%] h-full rounded-2xl flex duration-1000 -translate-x-[16.6%]'} style={{ transform: `translateX(-${(index * 100) / 6}%)` }}
+                style={{ transform: `translateX(-${(index * 100) / 6}%)` }}>
+             
+
+                    <Carousel4 articles={articles} />
+                    <Carousel1 articles={articles} />
+                    <Carousel2 articles={articles} />
+                    <Carousel3 articles={articles} />
+                    <Carousel4 articles={articles} />
+                    <Carousel1 articles={articles} />
+            </div>
 
 
 
         </div>
+        <div className=" flex py-6 gap-2 font-thin justify-end">
+            <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg  border-black">   <IoIosArrowBack onClick={handleSlider} size={28} /></button>
+            <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg border-black"> <IoIosArrowForward onClick={handleSlider} size={28} /> </button>
+        </div>
+    </div>
 
 
-    )
+
+
+
+)
 }

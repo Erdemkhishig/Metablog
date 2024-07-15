@@ -25,12 +25,12 @@ export const MainCarousel = ({ articles }) => {
 
 
     return (
-        <div >
+        <div className="w-full h-37.5 relative rounded-lg overflow-hidden ">
 
-            <div className="flex flex-row relative  w-full h-[12rem] lg:h-[38.5rem]">
+          
                 <BigCarousel  articles={articles} />
              
-            </div>
+           
 
 
 

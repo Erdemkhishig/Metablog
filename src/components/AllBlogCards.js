@@ -57,7 +57,7 @@ export const Allblog = () => {
     return (
         <div >
             <div className="mt-20 font-bold text-2xl">All Blog Post</div>
-            <div className="flex gap-4 py-12">
+            <div className="flex gap-4 py-12 flex-wrap">
                 {categories.map((item) => (
                     <button
                         key={item}

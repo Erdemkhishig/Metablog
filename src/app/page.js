@@ -10,6 +10,7 @@ import { FooterUp } from "../components/Footer-Up";
 import { FooterDown } from "../components/Footer-Down";
 
 import { useEffect, useState } from "react";
+import { BigCarousel } from "@/components/BigCarousel";
 
 const getArticle = async () => {
 
@@ -47,7 +48,8 @@ export default function Home() {
     <main className="bg-white ">
       <div className="px-4 max-w-screen-xl m-auto ">
         <Navbar />
-        <MainCarousel articles={articles} />
+        {/* <MainCarousel articles={articles} /> */}
+        <BigCarousel articles={articles}/>
         <Trending articles={articles} />
         <Allblog />
 
