@@ -75,7 +75,7 @@ export default function Blog() {
                     <div className="m-auto flex justify-center">
                         <button className="my-16 w-24 h-12 border-2 border-gray-400 rounded-lg flex justify-center items-center cursor-pointer "
                             onClick={handleLoadMore}>
-                            {loading ? <p>Loading...</p> : <p>Load More</p>}
+                            {loading ? <p>Loading...</p> : <p>Load_More</p>}
                         </button>
                     </div>
                 </div>
