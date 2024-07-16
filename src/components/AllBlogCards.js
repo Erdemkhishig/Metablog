@@ -10,7 +10,7 @@ const categories = [
     "Travel",
     "Fashion",
     "Technology",
-    "Branding",
+    "Javascript",
 ]
 
 
@@ -57,20 +57,28 @@ export const Allblog = () => {
     return (
         <div >
             <div className="mt-20 font-bold text-2xl">All Blog Post</div>
-            <div className="flex gap-4 py-12 flex-wrap">
-                {categories.map((item) => (
-                    <button
-                        key={item}
-                        className="px-2 py-1 bg-gray-200 rounded-md"
-                        style={{
-                            color: category === item ? "#4b6bfb" : "",
-                        }}
-                        onClick={() => handleCategory(item)}>
-                        {item}
-                    </button>
+            <div className="flex items-center">
+                <div className="flex flex-wrap gap-4 py-12 lg:w-2/3">
+                    {categories.map((item) => (
+                        <button
+                            key={item}
+                            className="px-2 py-1 bg-gray-200 rounded-md"
+                            style={{
+                                color: category === item ? "#4b6bfb" : "",
+                            }}
+                            onClick={() => handleCategory(item)}>
+                            {item}
 
-                ))}
-                <div className="flex justify-end invisible w-[70%] lg:visible">   <span className="text-xs" >View All</span></div>
+                        </button>
+
+
+
+
+                    ))}
+
+                </div>
+                <div className="hidden lg:flex lg:justify-end w-[70%] lg:visible">   <span className="text-xs cursor-pointer" >View All</span></div>
+
 
 
             </div>
