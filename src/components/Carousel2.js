@@ -1,6 +1,7 @@
 
 
 import { format, parseISO } from "date-fns";
+import Link from "next/link";
 export const Carousel2 = ({ articles, index }) => {
 
     const caroSecond = articles[articles.length - 3]
@@ -9,15 +10,15 @@ export const Carousel2 = ({ articles, index }) => {
 
 
         // <div className={prev ? `duration-600 translateX(-${(index * 100) / 6}%)` : `translateX(-${(index * 100) / 6}%)`} >
-        <div> <img className="w-[1248px] h-full object-cover" src={caroSecond.social_image} alt="" />
-            {/* <div className="w-44 h-24 top-[5.5rem] flex flex-col gap-2 absolute lg:top-[26rem] left-2 rounded-lg px-4 py-8 lg:w-[50%] lg:h-[30%] bg-white overflow-hidden">
-                <p className="hidden text-blue-500 lg:flex justify-center px-2 w-fit h-fit border-2 border-gray-200 rounded-lg bg-gray-200">{caroSecond.title}</p>
-                <p className="py-3 -mt-8 lg:mt-0 text-sm lg:font-bold">{caroSecond.description}</p>
+        <Link href={`/blog/${caroSecond.id}`}><img className="w-[1250px] h-full object-cover relative" src={caroSecond.social_image} alt="" />
+            {/* <div>
+                <p>{caroSecond.title}</p>
+                <p >{caroSecond.description}</p>
                 <p>{format(caroSecond.published_at, 'LLLL d, yyyy')}</p>
 
             </div> */}
 
-        </div>
+        </Link>
         // </div>
 
 

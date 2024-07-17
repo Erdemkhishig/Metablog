@@ -8,6 +8,7 @@ import { Carousel4 } from "./Carousel4";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import React from "react";
+import Link from "next/link";
 
 
 
@@ -75,24 +76,46 @@ export const BigCarousel = ({ articles, }) => {
     //     next(!prev)
     //     setIndex(index + 1)
     // };
+    const [percent, setPercent] = useState(1);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const [currentIndex, setCurrentIndex,] = useState(1);
-    const prevSlide = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? 4 : currentIndex - 1;
-        setCurrentIndex(newIndex)
+    const clickNext = () => {
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setPercent((prevPercent) => (prevPercent + 1) % 6);
     };
 
-    const nextSlide = () => {
-        const isLastSlide = currentIndex === 5;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex)
+    const clickPrev = () => {
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setPercent((prevPercent) => (prevPercent - 1 + 6) % 6);
     };
 
-    useEffect(() => {
-        if (currentIndex === 4) false;
-        else if (currentIndex === 0) false;
-    }, []);
+    const handleTransitionEnd = () => {
+        setIsTransitioning(false);
+        if (percent === 0) {
+            setPercent(4);
+        } else if (percent === 5) {
+            setPercent(1);
+        }
+    };
+    // const [currentIndex, setCurrentIndex,] = useState(1);
+    // const prevSlide = () => {
+    //     const isFirstSlide = currentIndex === 0;
+    //     const newIndex = isFirstSlide ? 4 : currentIndex - 1;
+    //     setCurrentIndex(newIndex)
+    // };
+
+    // const nextSlide = () => {
+    //     const isLastSlide = currentIndex === 5;
+    //     const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    //     setCurrentIndex(newIndex)
+    // };
+
+    // useEffect(() => {
+    //     if (currentIndex === 4) false;
+    //     else if (currentIndex === 0) false;
+    // }, []);
 
 
 
@@ -109,8 +132,13 @@ export const BigCarousel = ({ articles, }) => {
 
     return (
         <div>
-            <div className="relative w-full h-[15rem] lg:h-[38rem] overflow-hidden" >
-                <div className="w-[600%] h-full rounded-2xl flex duration-1000" style={{ transform: `translateX(-${(currentIndex * 100) / 6}%)` }}>
+            <div className="w-full h-[37.5rem] rounded-lg relative overflow-hidden shadow-lg">
+                <div
+                    className={`absolute bg-green-200 w-[600%] h-full flex ${isTransitioning ? "duration-1000" : ""
+                        }`}
+                    style={{ transform: `translateX(-${(percent * 100) / 6}%)` }}
+                    onTransitionEnd={handleTransitionEnd}
+                >
                     {slider}
 
                     {/* <Carousel4 articles={articles} />
@@ -125,8 +153,8 @@ export const BigCarousel = ({ articles, }) => {
 
             </div>
             <div className=" flex py-6 gap-2 font-thin justify-end">
-                <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg  border-black">   <IoIosArrowBack onClick={prevSlide} size={28} /></button>
-                <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg border-black"> <IoIosArrowForward onClick={nextSlide} size={28} /> </button>
+                <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg  border-black">   <IoIosArrowBack onClick={clickPrev} size={28} /></button>
+                <button className="flex items-center justify-center w-[24px] h-[24px] lg:w-[44px] lg:h-[44px] border-2 rounded-lg border-black"> <IoIosArrowForward onClick={clickNext} size={28} /> </button>
             </div>
         </div>
 

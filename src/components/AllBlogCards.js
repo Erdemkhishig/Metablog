@@ -3,6 +3,7 @@
 import { BlogCard } from "./BlogCard";
 import { useEffect, useState } from "react";
 import { BlogTag } from "./BlogTag";
+import Link from "next/link";
 
 const categories = [
     "All",
@@ -77,7 +78,7 @@ export const Allblog = () => {
                     ))}
 
                 </div>
-                <div className="hidden lg:flex lg:justify-end w-[70%] lg:visible">   <span className="text-xs cursor-pointer" >View All</span></div>
+                <Link href="/blog"><div className="hidden lg:flex lg:justify-end w-[70%] lg:visible">   <span className="text-xs cursor-pointer" >View All</span></div></Link>
 
 
 
@@ -85,12 +86,16 @@ export const Allblog = () => {
             <div className="grid grid-rows-1 grid-cols-1 gap-2 lg:gap lg:grid-cols-3 lg:grid-rows-3">
 
                 {blogs.map((blog, index) => (
-                    <BlogCard
-                        key={blog.title}
-                        img={blog.social_image}
-                        title={blog.title}
-                        date={blog.published_at}
-                        tags={blog.tag_list} />
+                    <Link href={`/blog/${blog.id}`}>
+                        <BlogCard
+                            key={blog.title}
+                            img={blog.social_image}
+                            title={blog.title}
+                            date={blog.published_at}
+                            name={blog.user.name}
+                            tags={blog.tag_list} />
+                    </Link>
+
                 ))}
             </div>
             <div className="m-auto flex justify-center">

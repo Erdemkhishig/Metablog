@@ -13,9 +13,9 @@ export const Navbar = () => {
 
         <div className="px-4">
             <div className=" flex justify-between py-8">
-                <MetablogIcon />
+                <Link href="http://localhost:3000/"><span className="pr-8"> <MetablogIcon /></span></Link>
                 <div className="hidden lg:flex">
-                    <div className="flex items-center gap-16 pr-36">
+                    <div className="flex items-center gap-16 pl-8 pr-16">
                         <Link href="http://localhost:3000/"><span>Home</span></Link>
                         <Link href="/blog"><span>Blog</span></Link>
                         <Link href="/contact"><span>Contact</span></Link>

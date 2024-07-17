@@ -2,6 +2,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 
 
@@ -22,9 +23,9 @@ export const FooterUp = () => {
 
                 </div>
                 <div className="flex gap-12 py-8 text-[#3B3C4A] lg:pt-4">
-                    <span>Home</span>
-                    <span>Blog</span>
-                    <span>Contact</span>
+                    <Link href="http://localhost:3000/"><span>Home</span></Link>
+                    <Link href="/blog"><span>Blog</span></Link>
+                    <Link href="/contact"><span>Contact</span></Link>
                 </div>
                 <div className="flex gap-8 lg:pt-4">
                     <FaFacebook color="#6D6E76" />

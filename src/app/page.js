@@ -49,7 +49,7 @@ export default function Home() {
       <div className="px-4 max-w-screen-xl m-auto ">
         <Navbar />
         {/* <MainCarousel articles={articles} /> */}
-        <BigCarousel articles={articles}/>
+        <BigCarousel articles={articles} />
         <Trending articles={articles} />
         <Allblog />
 
