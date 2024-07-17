@@ -3,19 +3,15 @@
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 
-export const Carousel1 = ({ articles, index }) => {
-
-
-    const caroFirst = articles[articles.length - 4]
-
+export const CarouselCard = ({ image, id, title, description, date }) => {
     return (
 
-        <Link href={`/blog/${caroFirst.id}`}>
-            <div><img className="w-[1250px] h-full relative" src={caroFirst.social_image} alt="" />
-                <div className="z-20">
-                    <p>{caroFirst.title}</p>
-                    <p >{caroFirst.description}</p>
-                    <p>{format(caroFirst.published_at, 'LLLL d, yyyy')}</p>
+        <Link href={`/blog/${id}`}>
+            <div><img className="w-[1250px] h-full relative" src={image} alt="" />
+                <div className="absolute bg-white bottom-8 pl-8 ml-8 rounded-xl">
+                    <p className="w-20 h-20">{title}</p>
+                    <p >{description}</p>
+                    <p>{format(date, 'LLLL d, yyyy')}</p>
 
                 </div>
 
@@ -24,7 +20,7 @@ export const Carousel1 = ({ articles, index }) => {
 
 
 
-    );
+    ); 
 };
 
 // import React from 'react';
