@@ -7,6 +7,7 @@ import Link from "next/link"
 import { format, parseISO } from "date-fns";
 import { useEffect, useState } from "react";
 
+
 import { BlogCard } from "@/components/BlogCard";
 import { useParams } from "next/navigation";
 import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
@@ -40,8 +41,12 @@ export default function oneBlog() {
         getData();
 
     }, [id]);
-    if (!blogs) {
-        return <div className="bg-white h-screen">Loading...</div>;
+    if (blogs.length === 0) {
+        return (
+            <div className="flex justify-center items-center w-full h-screen">
+                <div className="border-t-gray-500 border-8 animate-spin  rounded-full w-16 h-16"></div>
+            </div>
+        )
     }
     const date = parseISO(blogs.published_at)
 

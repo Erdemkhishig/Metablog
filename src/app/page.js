@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
-import { MainCarousel } from "../components/MainCarousel";
 import { Trending } from "../components/TrendingCards";
 import { Allblog } from "../components/AllBlogCards";
 import { Loadmore } from "../components/BlogTag";
@@ -48,7 +47,7 @@ export default function Home() {
     <main className="bg-white ">
       <div className="px-4 max-w-screen-xl m-auto ">
         <Navbar />
-        {/* <MainCarousel articles={articles} /> */}
+
         <BigCarousel articles={articles} />
         <Trending articles={articles} />
         <Allblog />

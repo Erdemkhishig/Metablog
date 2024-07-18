@@ -78,7 +78,7 @@ export const Allblog = () => {
                     ))}
 
                 </div>
-                <Link href="/blog"><div className="hidden lg:flex lg:justify-end w-[70%] lg:visible">   <span className="text-xs cursor-pointer" >View All</span></div></Link>
+                <Link href="/blog" className="hidden lg:flex lg:justify-end w-[70%] lg:visible">   <span className="flex justify-end text-xs cursor-pointer" >View All</span></Link>
 
 
 
@@ -99,7 +99,7 @@ export const Allblog = () => {
                 ))}
             </div>
             <div className="m-auto flex justify-center">
-                <button className="my-16 w-24 h-12 border-2 border-gray-400 rounded-lg flex justify-center items-center cursor-pointer "
+                <button className="my-16 w-36 h-12 border-2 border-gray-300 rounded-lg flex justify-center items-center cursor-pointer "
                     onClick={handleLoadMore}>
                     {loading ? <p>Loading...</p> : <p>Load More</p>}
                 </button>
