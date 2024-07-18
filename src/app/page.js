@@ -11,6 +11,7 @@ import { FooterDown } from "../components/Footer-Down";
 import { useEffect, useState } from "react";
 import { BigCarousel } from "@/components/BigCarousel";
 
+
 const getArticle = async () => {
 
   const res = await fetch("https://dev.to/api/articles"
@@ -42,6 +43,8 @@ export default function Home() {
   //     if (b.articles[i] < a.articles[i + 1])
   //       if (a.articles[i + 1] > b.articles[i]);
   //   })
+
+  
 
   return (
     <main className="bg-white ">

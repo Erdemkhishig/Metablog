@@ -7,12 +7,11 @@ import Link from "next/link"
 import { format, parseISO } from "date-fns";
 import { useEffect, useState } from "react";
 
-
 import { BlogCard } from "@/components/BlogCard";
 import { useParams } from "next/navigation";
 import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 import { FaUserCircle } from "react-icons/fa";
-
+import Image from 'next/image';
 
 export default function oneBlog() {
 
@@ -64,7 +63,10 @@ export default function oneBlog() {
                     <div> {blogs.user.name}</div>
                     <div className="px-4">{format(date, 'LLLL d, yyyy')}</div>
                 </div>
-                <div><img src={blogs.cover_image} alt="" /></div>
+                <div>
+                <img src={blogs.cover_image}/>
+                
+                    </div> 
                 <div className="pt-8">{blogs.description}</div>
                 <div className="flex flex-col justify-center items-center pb-32 gap-6" dangerouslySetInnerHTML={{ __html: blogs.body_html }} />
 

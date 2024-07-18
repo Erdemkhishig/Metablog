@@ -7,9 +7,11 @@ import { BlogCard } from "@/components/BlogCard";
 import { useEffect, useState } from "react";
 import { BlogTag } from "@/components/BlogTag";
 import Link from "next/link";
-
+import Image from 'next/image';
 
 export default function Blog() {
+
+    
 
 
     const [loading, setLoading] = useState(true);
@@ -46,6 +48,7 @@ export default function Blog() {
         getData();
 
     }, [category, perPage]);
+    
 
 
     return (
@@ -64,10 +67,10 @@ export default function Blog() {
                     </div>
                     <div className="grid grid-rows-1 grid-cols-1 gap-2 lg:gap lg:grid-cols-3 lg:grid-rows-3">
 
-                        {blogs.map((blog, index) => (
+                        {blogs.map((blog, index, key) => (
                             <Link href={`/blog/${blog.id}`}>
                                 <BlogCard
-                                    key={blog.title}
+                                    key={blog.id}
                                     img={blog.social_image}
                                     title={blog.title}
                                     date={blog.published_at}

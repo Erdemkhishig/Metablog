@@ -2,6 +2,7 @@
 
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
+import Image from 'next/image';
 
 export const CarouselCard = ({ image, id, title, description, date, tags }) => {
     return (
