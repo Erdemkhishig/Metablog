@@ -13,13 +13,13 @@ export default function Contact() {
                     <p className="pt-8 px-4 text-[#696A75]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                 </div>
                 <div className="flex gap-12 py-8">
-                    <div className="border-2 rounded-lg h-32 w-1/2">
+                    <div className="border-2 rounded-lg w-1/2">
                         <div className="py-4 px-4">
                             <p className="pb-4 font-bold text-xl ">Address</p>
                             <p className="text-[#696A75] flex flex-wrap pb-4">1328 Oak Ridge Drive, Saint Louis, Missouri</p>
                         </div>
                     </div>
-                    <div className="border-2 rounded-lg h-32  w-1/2">
+                    <div className="border-2 rounded-lg  w-1/2">
                         <div className="py-4 px-4">
                             <p className="pb-4 font-bold text-xl">Contact</p>
                             <p className="text-[#696A75]">313-332-8662</p>
@@ -29,9 +29,9 @@ export default function Contact() {
                 </div>
                 <div className="bg-gray-100 border-2 rounded-lg mb-32 px-4 py-4 flex flex-col">
                     <p className="text-lg font-bold py-2">Leave a Message</p>
-                    <div className="flex gap-8">
-                        <input className="border-2 rounded-md px-4 my-4 py-[3px]  bg-white w-80" type="Subject" placeholder="Your Name"></input>
-                        <input className="border-2 rounded-md px-4 my-4 py-[3px]  bg-white w-80" type="Subject" placeholder="Your Email"></input>
+                    <div className="flex  gap-2 lg:gap-8">
+                        <input className="border-2 rounded-md px-4 my-4 py-[3px]  bg-white w-1/2" type="Subject" placeholder="Your Name"></input>
+                        <input className="border-2 rounded-md px-4 my-4 py-[3px]  bg-white w-1/2" type="Subject" placeholder="Your Email"></input>
                     </div>
                     <input className="border-2 rounded-md px-4 my-4 py-[3px]  bg-white" type="Subject" placeholder="Subject"></input>
                     <input className="border-2 rounded-md px-4 my-4 pt-4 pb-40  bg-white" type="Subject" placeholder="Write a message"></input>

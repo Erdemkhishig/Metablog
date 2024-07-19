@@ -48,7 +48,7 @@ export const Trending = () => {
                                 alt="1"
                             />
                         </div>
-                        <p className="text-white px-2 w-fit h-fit border-2 border-blue-500 rounded-lg bg-blue-500 absolute top-36 left-12 flex items-center ">sda{element.type_of}</p>
+                        <p className="text-white px-2 w-fit h-fit border-2 border-blue-500 rounded-lg bg-blue-500 absolute top-36 left-12 flex items-center ">{element.type_of}</p>
                         <p className="text-white absolute top-48 left-12  w-[200px]">{element.title}</p>
                     </Link>
                 ))}

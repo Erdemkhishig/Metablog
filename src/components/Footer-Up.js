@@ -23,7 +23,7 @@ export const FooterUp = () => {
 
                 </div>
                 <div className="flex gap-12 py-8 text-[#696A75] lg:pt-4 lg:flex-col lg:gap-2">
-                    <Link href="http://localhost:3000/"><span>Home</span></Link>
+                    <Link href="/"><span>Home</span></Link>
                     <Link href="/blog"><span>Blog</span></Link>
                     <Link href="/contact"><span>Contact</span></Link>
                 </div>
