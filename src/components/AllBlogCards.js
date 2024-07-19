@@ -54,8 +54,8 @@ export const Allblog = () => {
 
     }, [category, perPage]);
 
-
     return (
+
         <div >
             <div className="mt-20 font-bold text-2xl">All Blog Post</div>
             <div className="flex items-center">
@@ -84,18 +84,16 @@ export const Allblog = () => {
 
             </div>
             <div className="grid grid-rows-1 grid-cols-1 gap-2 lg:gap lg:grid-cols-3 lg:grid-rows-3">
-
-                {blogs.map((blog, index) => (
-                    <Link href={`/blog/${blog.id}`}>
+                {blogs.map((blog) => (
+                    <Link key={blog.id} href={`/blog/${blog.id}`}>
                         <BlogCard
-                            key={blog.title}
                             img={blog.social_image}
                             title={blog.title}
                             date={blog.published_at}
                             name={blog.user.name}
-                            tags={blog.tag_list} />
+                            tags={blog.tag_list}
+                        />
                     </Link>
-
                 ))}
             </div>
             <div className="m-auto flex justify-center">

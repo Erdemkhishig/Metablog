@@ -11,7 +11,12 @@ export const BlogCard = ({ img, title, date, tags, name, id }) => {
 
         <div className=" border-2 border-gray-100 rounded-lg px-4 py-4 mb-8">
             <div className="flex flex-col gap-8">
-             <img src={img} alt="" 
+                <Image
+                    src={img}
+                    width={1000}
+                    height={500}
+                    alt="Picture"
+
 
                     className="h-[2/1] w-full rounded-md" />
                 <div className="text-blue-500 flex gap-2 flex-wrap rounded-lg">{tags.map((tag) => (

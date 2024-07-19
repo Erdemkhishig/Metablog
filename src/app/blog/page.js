@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function Blog() {
 
-    
+
 
 
     const [loading, setLoading] = useState(true);
@@ -48,7 +48,7 @@ export default function Blog() {
         getData();
 
     }, [category, perPage]);
-    
+
 
 
     return (
@@ -68,9 +68,9 @@ export default function Blog() {
                     <div className="grid grid-rows-1 grid-cols-1 gap-2 lg:gap lg:grid-cols-3 lg:grid-rows-3">
 
                         {blogs.map((blog, index, key) => (
-                            <Link href={`/blog/${blog.id}`}>
+                            <Link key={blog.id} href={`/blog/${blog.id}`}>
                                 <BlogCard
-                                    key={blog.id}
+                                    key={blog}
                                     img={blog.social_image}
                                     title={blog.title}
                                     date={blog.published_at}

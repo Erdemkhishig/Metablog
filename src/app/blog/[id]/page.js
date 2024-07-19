@@ -13,7 +13,7 @@ import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 import { FaUserCircle } from "react-icons/fa";
 import Image from 'next/image';
 
-export default function oneBlog() {
+export default function OneBlog() {
 
 
     const [blogs, setBlogs] = useState("");
@@ -64,9 +64,15 @@ export default function oneBlog() {
                     <div className="px-4">{format(date, 'LLLL d, yyyy')}</div>
                 </div>
                 <div>
-                <img src={blogs.cover_image}/>
-                
-                    </div> 
+                    {/* <img src={blogs.cover_image} /> */}
+                    <Image
+                        src={blogs.cover_image}
+                        width={1000}
+                        height={500}
+                        alt="Picture"
+                    />
+
+                </div>
                 <div className="pt-8">{blogs.description}</div>
                 <div className="flex flex-col justify-center items-center pb-32 gap-6" dangerouslySetInnerHTML={{ __html: blogs.body_html }} />
 
