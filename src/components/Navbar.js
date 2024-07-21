@@ -11,48 +11,54 @@ import { Sidebar } from "./Sidebar";
 import { usePathname } from "next/navigation";
 import Home from "@/app/page";
 
+// const pathname = usePathname();
+// console.log(pathname);
 
+const paths = [
+    {
+        name: "Home",
+        path: "/",
+
+    },
+    {
+        name: "Blogs",
+        path: "/blog",
+
+    }, {
+        name: "Contact",
+        path: "/contact",
+
+    }
+];
 
 export const Navbar = () => {
+
+    const pathname = usePathname();
 
     const [checked, unchecked] = useState(false)
     const handleSidebar = () => {
         unchecked(!checked)
     };
 
-    // const pathname = usePathname();
-    // const path = [
-    //     {
-    //         name: "Home",
-    //         path: "/",
-
-    //     },
-    //     {
-    //         name: "Blog",
-    //         path: "/blog",
-
-    //     }, {
-    //         name: "Contact",
-    //         path: "/contact",
-
-    //     }
-    // ]
+ 
 
     return (
+
+      
+
 
         <div id="up" className="px-4">
             <div className=" flex justify-between py-8">
                 <Link href="/"><span className="pr-8"> <MetablogIcon /></span></Link>
                 <div className="hidden lg:flex text-[#696A75] items-center">
                     <div className="flex items-center gap-16 pl-8 pr-16">
-                        {/* {path.map((path, index) => {
+                        {paths.map((path, index) => (
                             <Link key={index} href={path.path}>
-                                <div className="text-black "></div>
+                                <div className="text-black " style={{color: pathname === path.path ? "red" : "black"}}>
+                                {path.name}</div>
                             </Link>
-                        })} */}
-                        <Link href="/"><span>Home</span></Link>
-                        <Link href="/blog"><span>Blog</span></Link>
-                        <Link href="/contact"><span>Contact</span></Link>
+                        ))}
+                       
                     </div>
 
                     <div className="flex items-center px-16">
