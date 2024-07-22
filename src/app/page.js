@@ -44,12 +44,12 @@ export default function Home() {
   //       if (a.articles[i + 1] > b.articles[i]);
   //   })
 
-  
+
 
   return (
     <main className="bg-white ">
       <div className="px-4 max-w-screen-xl m-auto ">
-        <Navbar />
+        <Navbar articles={articles} />
 
         <BigCarousel articles={articles} />
         <Trending articles={articles} />

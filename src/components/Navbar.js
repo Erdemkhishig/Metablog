@@ -9,10 +9,7 @@ import { SlArrowDownCircle } from "react-icons/sl";
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { usePathname } from "next/navigation";
-import Home from "@/app/page";
 
-// const pathname = usePathname();
-// console.log(pathname);
 
 const paths = [
     {
@@ -31,7 +28,7 @@ const paths = [
     }
 ];
 
-export const Navbar = () => {
+export const Navbar = (articles) => {
 
     const pathname = usePathname();
 
@@ -40,11 +37,11 @@ export const Navbar = () => {
         unchecked(!checked)
     };
 
- 
+
 
     return (
 
-      
+
 
 
         <div id="up" className="px-4">
@@ -54,15 +51,15 @@ export const Navbar = () => {
                     <div className="flex items-center gap-16 pl-8 pr-16">
                         {paths.map((path, index) => (
                             <Link key={index} href={path.path}>
-                                <div className="text-black " style={{color: pathname === path.path ? "red" : "black"}}>
-                                {path.name}</div>
+                                <div className="text-black " style={{ color: pathname === path.path ? "red" : "black" }}>
+                                    {path.name}</div>
                             </Link>
                         ))}
-                       
+
                     </div>
 
                     <div className="flex items-center px-16">
-                        <Search />
+                        <Search articles={articles} />
 
 
                     </div>
